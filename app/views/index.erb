@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Hacker News</h1>
+  <p>Current Posts</p>
+
+  <% @posts.each do |post| %>
+    <p><a href="/post/<%= post.id %>"><%= post.title %></a></p>
+  <% end %>
+
+</div>

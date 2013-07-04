@@ -1,0 +1,11 @@
+<div class="container">
+  
+  <h1><%= @post.title.titlecase %></h1>
+  <p>by <a href="/user/<%= @post.user_id %>"><%= User.find(@post.user_id).username %></a> on <%= @post.created_at.strftime("%B %d, %Y") %></p>
+  <p><%= @post.article %></p>
+  <h3><% if !@comments.empty? %>Comments<% else %>No Comments<% end %></h3>
+  <% @comments.each do |comment| %>
+  <p><%= comment.opinion %><br>
+    -<em><a href="/user/<%= comment.user_id %>"><%= User.find(comment.user_id).username %></a></em></p>
+  <% end %>
+</div>

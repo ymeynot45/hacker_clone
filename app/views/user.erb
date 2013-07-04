@@ -1,0 +1,12 @@
+<div class="container">
+  
+  <h1><%= @user.username.capitalize %></h1>
+  <h2><% if !@posts.empty? %>Posts<% else %>No Posts<% end %></h2>
+  <% @posts.each do |post| %>
+  <p><a href="/post/<%= post.id %>"><%= post.title %></a></p>
+  <% end %>
+  <h2><% if !@comments.empty? %>Comments<% else %>No Comments<% end %></h2>
+  <% @comments.each do |comment| %>
+  <p><a href="/post/<%= comment.post_id %>"><%= comment.opinion %></a></p>
+  <% end %>
+</div>
